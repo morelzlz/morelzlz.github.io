@@ -1,6 +1,90 @@
 ---
 layout: post
-title:  "alogrithym!"
+title:  "vscode theme"
 date:   2024-10-16 18:21:05 +0800
 categories: alogrithym
 ---
+记录一个vscode的goland主题
+```json
+// replace the default golang setting in the settings.json of vscode with the below json snippet
+// you need to install 【JetBrains Mono】fonts on your local machine, https://www.jetbrains.com/zh-cn/lp/mono/
+// highlighting style preview, https://i.imgur.com/uH3HC5G.png
+
+ "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+  },
+  "editor.fontFamily": "'JetBrains Mono',Consolas, 'Courier New', monospace",
+  "editor.lineHeight": 1.7,
+  "editor.fontWeight": "normal",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#919daa",
+    "editorBracketHighlight.foreground2": "#919daa",
+    "editorBracketHighlight.foreground3": "#919daa",
+    "editorBracketHighlight.foreground4": "#919daa",
+    "editorBracketHighlight.foreground5": "#919daa",
+    "editorBracketHighlight.foreground6": "#919daa",
+    "editorBracketMatch.background": "#3b514d",
+    "editorBracketMatch.border": "#3b514d",
+    "editor.background": "#2b2b2b",
+    "editor.foreground": "#919daa",
+  },
+  "gopls": {
+    "ui.semanticTokens": true,
+  },
+  "editor.semanticTokenColorCustomizations":{
+    "enabled":true,
+    "[Darcula]": {
+      "enabled": true,
+      "rules":{
+        "namespace": "#afbf7e",
+        "type":"#6fafbd",
+        "parameter": "#919daa",
+      }
+    }
+  },
+  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#b09d79",
+        }
+      },{
+        "scope":"entity.name.function.member",
+        "settings": {
+          "foreground": "#ffc66d",
+        }
+      },{
+        "scope":"keyword.operator",
+        "settings": {
+          "foreground": "#919daa",
+        }
+      },{
+        "scope":"punctuation.other.comma.go",
+        "settings": {
+          "foreground": "#CC8242",
+        }
+      },{
+        "scope":"variable.other.readwrite",
+        "settings": {
+          "foreground": "#919daa",
+          "fontStyle": "bold"
+        }
+      },{
+        "scope":"variable.other",
+        "settings": {
+          "foreground": "#9876aa",
+          "fontStyle": "bold"
+        }
+      }
+    ],
+  }
+```
+在vscode的settings.json中替换默认的[go]配置，安装JetBrains Mono字体，然后重启vscode即可。
